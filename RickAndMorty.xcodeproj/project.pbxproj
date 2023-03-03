@@ -147,7 +147,6 @@
 		FA3E435829B0F47B00535A89 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				FA6697EB29B261AC00B90C71 /* Views */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -159,13 +158,6 @@
 				FA6697EE29B2623300B90C71 /* DataTypesGroup */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FA6697EB29B261AC00B90C71 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FA6697EC29B261D400B90C71 /* Views */ = {
