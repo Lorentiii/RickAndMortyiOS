@@ -36,6 +36,7 @@
 		FA9D23A329B6179800AF4484 /* RMCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D23A229B6179800AF4484 /* RMCharacterDetailView.swift */; };
 		FA9D23A529B617DA00AF4484 /* RMCharacterDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D23A429B617DA00AF4484 /* RMCharacterDetailViewViewModel.swift */; };
 		FA9D23A729B62FDC00AF4484 /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D23A629B62FDC00AF4484 /* RMFooterLoadingCollectionReusableView.swift */; };
+		FA9D23A929B6A99000AF4484 /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D23A829B6A99000AF4484 /* RMImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		FA9D23A229B6179800AF4484 /* RMCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailView.swift; sourceTree = "<group>"; };
 		FA9D23A429B617DA00AF4484 /* RMCharacterDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailViewViewModel.swift; sourceTree = "<group>"; };
 		FA9D23A629B62FDC00AF4484 /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		FA9D23A829B6A99000AF4484 /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		FA3E435829B0F47B00535A89 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FA9D23A829B6A99000AF4484 /* RMImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				FA3E435529B0F44E00535A89 /* AppDelegate.swift in Sources */,
 				FA66980829B2C31F00B90C71 /* RMCharacterCollectionViewCell.swift in Sources */,
 				FA3E436229B0FA3600535A89 /* RMService.swift in Sources */,
+				FA9D23A929B6A99000AF4484 /* RMImageLoader.swift in Sources */,
 				FA3E435629B0F44E00535A89 /* SceneDelegate.swift in Sources */,
 				FA6697F729B2623300B90C71 /* RMCharacter.swift in Sources */,
 				FA3E436629B0FAFC00535A89 /* RMEndpoint.swift in Sources */,
