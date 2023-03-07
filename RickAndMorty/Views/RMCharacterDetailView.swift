@@ -10,8 +10,12 @@ import UIKit
 ///view for single character info
 final class RMCharacterDetailView: UIView {
     
-    private var collectionView: UICollectionView?
-
+    
+    
+    public var collectionView: UICollectionView?
+    
+    private let viewModel: RMCharacterDetailViewViewModel
+    
     private let spinner: UIActivityIndicatorView = {
         
         let spinner = UIActivityIndicatorView(style: .large)
@@ -23,10 +27,11 @@ final class RMCharacterDetailView: UIView {
     
     // mark init
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, viewModel: RMCharacterDetailViewViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemMint
+        backgroundColor = .systemBackground
         let collectionView = createCollectionView()
         self.collectionView = collectionView
         addSubviews(collectionView, spinner)
@@ -62,9 +67,24 @@ final class RMCharacterDetailView: UIView {
         }
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-    return collectionView
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }
-    private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection{
-        let 
+    private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
+        let secttionTypes = viewModel.sections
+        
+        switch secttionTypes[sectionIndex] {
+        case .photo:
+            return viewModel.createPhotoSectionLayout()
+        case .information:
+            return viewModel.createInfoSectionLayout()
+        case.episodes:
+            return viewModel.createEpisodesSectionLayout()
+            
+        }
+        
+        
     }
+    
 }
+   
