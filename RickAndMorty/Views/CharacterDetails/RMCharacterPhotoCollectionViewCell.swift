@@ -1,5 +1,5 @@
 //
-//  RMCharacterEpisodeCollectionViewCell.swift
+//  RMCharacterPhotoCollectionViewCell.swift
 //  RickAndMorty
 //
 //  Created by L's on 2023-03-07.
@@ -7,11 +7,8 @@
 
 import UIKit
 
-class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
- 
-    static let cellIdentifier = "RMCharacterEpisodeCollectionViewCell"
-    
-    
+final class RMCharacterPhotoCollectionViewCell: UICollectionViewCell {
+    static let cellIdentifier = "RMCharacterPhotoCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,9 +27,8 @@ class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     
-    public func configure(with viewModel: RMCharacterEpisodeCollectionViewCellViewModel) {
+    public func configure(with viewModel: RMCharacterPhotoCollectionViewCellViewModel) {
         
         
     }
 }
-
