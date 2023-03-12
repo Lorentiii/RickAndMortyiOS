@@ -27,6 +27,7 @@ final class RMCharacterListView: UIView {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         return spinner
         
+        
     }()
     
     
