@@ -19,10 +19,18 @@ final class RMEpisodeDetailViewViewModel {
     private var dataTuple: (RMEpisode, [RMCharacter])? {
         didSet{
             delegate?.didFetchEpisodeDetails()
+            
         }
     }
     
+    enum SectionType {
+        case information(viewModels: [RMEpisodeInfoCollectionViewCellViewModel])
+        case characters(viewModel: [RMCharacterCollectionViewCellViewModel])
+    }
+    
    public weak var delegate: RMEpisodeDetailViewViewModelDelegate?
+    
+    public private(set) var sections: [SectionType] = []
     
     init(endpointUrl: URL?) {
         self.endpointUrl = endpointUrl

@@ -8,7 +8,7 @@
 import UIKit
 
 class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate {
-
+    
     private let viewModel: RMEpisodeDetailViewViewModel
     
     private let detailView = RMEpisodeDetailView()
@@ -33,7 +33,7 @@ class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewMo
         viewModel.delegate = self
         viewModel.fetchEpisodeData()
     }
-
+    
     private func addConstraints(){
         NSLayoutConstraint.activate([
             detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
