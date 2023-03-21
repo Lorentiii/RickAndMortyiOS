@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate {
+class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate, RMEpisodeDetailViewDelegate {
     
     private let viewModel: RMEpisodeDetailViewViewModel
     
@@ -25,7 +25,7 @@ class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewMo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(detailView)
-        
+        detailView.delegate = self
         addConstraints()
         title = "Episode"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
@@ -45,6 +45,13 @@ class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewMo
     @objc
     private func didTapShare(){
         
+    }
+    
+    func rmEpisodeDetailView(_ detailView: RMEpisodeDetailView, didSelect character: RMCharacter) {
+        let vc = RMCharacterDetailViewController(viewModel: .init(character: character))
+        vc.title = character.name
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     func didFetchEpisodeDetails() {
         detailView.configure(with: viewModel)
