@@ -59,7 +59,7 @@ final class RMCharacterListView: UIView {
         fatalError("Unsupported")
     }
     
-    private func addConstraints(){
+    private func addConstraints(){ 
         NSLayoutConstraint.activate([
             spinner.widthAnchor.constraint(equalToConstant: 100),
             spinner.heightAnchor.constraint(equalToConstant: 100),
