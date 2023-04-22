@@ -9,7 +9,9 @@ import UIKit
 
 final class RMSearchView: UIView {
     
-   private  let viewModel: RMSearchViewViewModel
+    private  let viewModel: RMSearchViewViewModel
+    
+    private let SearchInputView = RMSearchInputView()
     
     private let noResultsView = RMNoSearchResultsView()
     
@@ -19,8 +21,9 @@ final class RMSearchView: UIView {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(noResultsView)
+        addSubviews(noResultsView, SearchInputView)
         addConstraints()
+        SearchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
     }
 
     required init?(coder: NSCoder) {
@@ -29,6 +32,13 @@ final class RMSearchView: UIView {
     
     private func addConstraints(){
         NSLayoutConstraint.activate([
+            // search input
+            SearchInputView.topAnchor.constraint(equalTo: topAnchor),
+            SearchInputView.leftAnchor.constraint(equalTo: leftAnchor),
+            SearchInputView.rightAnchor.constraint(equalTo: rightAnchor),
+            SearchInputView.heightAnchor.constraint(equalToConstant: 110),
+            
+            // no results
             noResultsView.widthAnchor.constraint(equalToConstant: 150),
             noResultsView.heightAnchor.constraint(equalToConstant: 150),
             noResultsView.centerXAnchor.constraint(equalTo: centerXAnchor),
