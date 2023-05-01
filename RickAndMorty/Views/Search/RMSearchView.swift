@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol RMSearchViewDelgate: AnyObject {
+    func rmSearchView(_ searchView: RMSearchView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption)
+}
+
 final class RMSearchView: UIView {
+    
+    weak var delegate:  RMSearchViewDelgate?
     
     private  let viewModel: RMSearchViewViewModel
     
@@ -24,6 +30,7 @@ final class RMSearchView: UIView {
         addSubviews(noResultsView, SearchInputView)
         addConstraints()
         SearchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
+        SearchInputView.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -47,6 +54,9 @@ final class RMSearchView: UIView {
             
         ])
     }
+    public func presentKeyboard(){
+        SearchInputView.presentKeyboard()
+    }
     
 }
 
@@ -62,5 +72,11 @@ extension RMSearchView: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+// mark delegate
+extension RMSearchView: RMSearchInputViewDelegate {
+    func rmSearchInputView(_ inputView: RMSearchInputView, didSelectOption option: RMSearchInputViewViewModel.DynamicOption) {
+        delegate?.rmSearchView(self, didSelectOption: option)
     }
 }
