@@ -36,7 +36,7 @@ final class RMSearchView: UIView {
             SearchInputView.topAnchor.constraint(equalTo: topAnchor),
             SearchInputView.leftAnchor.constraint(equalTo: leftAnchor),
             SearchInputView.rightAnchor.constraint(equalTo: rightAnchor),
-            SearchInputView.heightAnchor.constraint(equalToConstant: 110),
+            SearchInputView.heightAnchor.constraint(equalToConstant: viewModel.config.type == .episode ? 55 : 110),
             
             // no results
             noResultsView.widthAnchor.constraint(equalToConstant: 150),

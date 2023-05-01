@@ -43,10 +43,10 @@ final class RMSearchInputView: UIView {
 
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: topAnchor, constant: 3),
-            searchBar.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            searchBar.rightAnchor.constraint(equalTo: rightAnchor, constant: -5),
-            searchBar.heightAnchor.constraint(equalToConstant: 52)
+            searchBar.topAnchor.constraint(equalTo: topAnchor),
+            searchBar.leftAnchor.constraint(equalTo: leftAnchor),
+            searchBar.rightAnchor.constraint(equalTo: rightAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 58)
         ])
     }
     private func createOptionsSelectionViews(options: [RMSearchInputViewViewModel.DynamicOption]) {
