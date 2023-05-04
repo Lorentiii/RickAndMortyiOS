@@ -95,7 +95,7 @@ extension RMCharacterDetailViewController: UICollectionViewDelegate, UICollectio
             
             return cell
         case .episodes(let viewModels):
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterEpisodeCollectionViewCell.cellIdentifier, for: indexPath) as? RMCharacterEpisodeCollectionViewCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterEpisodeCollectionViewCell.cellIdentifer, for: indexPath) as? RMCharacterEpisodeCollectionViewCell else {
                 fatalError()
             }
             let viewModel =  viewModels[indexPath.row]

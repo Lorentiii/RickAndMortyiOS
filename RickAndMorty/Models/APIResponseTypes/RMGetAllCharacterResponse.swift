@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct RMGetAllCharacterResponse: Codable{
+struct RMGetAllCharactersResponse: Codable{
     
     struct Info: Codable{
             

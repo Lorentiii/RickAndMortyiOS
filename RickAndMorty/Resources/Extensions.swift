@@ -4,13 +4,19 @@
 //
 //  Created by L's on 2023-03-03.
 //
-
 import UIKit
 
-extension UIView{
+extension UIView {
+    /// Add multiple subviews
+    /// - Parameter views: Variadic views
     func addSubviews(_ views: UIView...) {
         views.forEach({
             addSubview($0)
         })
     }
+}
+
+extension UIDevice {
+    /// Check if current device is phone idiom
+    static let isiPhone = UIDevice.current.userInterfaceIdiom == .phone
 }

@@ -36,7 +36,7 @@ final class RMCharacterCollectionViewCellViewModel: Hashable, Equatable {
             return
         }
        
-        RMImageLoader.sharded.downloadImage(url, completion: completion)
+        RMImageLoader.shared.downloadImage(url, completion: completion)
         
     }
     static func == (lhs: RMCharacterCollectionViewCellViewModel, rhs: RMCharacterCollectionViewCellViewModel) -> Bool {

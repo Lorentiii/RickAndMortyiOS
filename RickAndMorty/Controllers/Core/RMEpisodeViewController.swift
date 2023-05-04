@@ -42,9 +42,10 @@ final class RMEpisodeViewController: UIViewController, RMEpisodeListViewDelegate
         ])
     }
         
-    func rmEpisodeListView(_ characterListView: RMEpisodeListView, didSelectEpisdoe episdoe: RMEpisode) {
-        let viewModel = RMEpisodeDetailViewViewModel(endpointUrl: URL(string: episdoe.url))
-        let detailVC = RMEpisodeDetailViewController(url: URL(string: episdoe.url))
+ 
+    func rmEpisodeListView(_ characterListView: RMEpisodeListView, didSelectEpisdoe episode: RMEpisode) {
+        // Open detail controller for that episode
+        let detailVC = RMEpisodeDetailViewController(url: URL(string: episode.url))
         detailVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(detailVC, animated: true)
     }

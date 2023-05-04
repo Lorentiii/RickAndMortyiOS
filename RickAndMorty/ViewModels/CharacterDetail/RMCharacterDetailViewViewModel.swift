@@ -43,7 +43,7 @@ final class RMCharacterDetailViewViewModel {
                 
             ]),
             .episodes(viewModels: character.episode.compactMap ({
-                return RMCharacterEpisodeCollectionViewCellViewModel(episodeDateUrl: URL(string: $0))
+                return RMCharacterEpisodeCollectionViewCellViewModel(episodeDataUrl: URL(string: $0))
             }))
         ]
     }
